@@ -1,6 +1,7 @@
 describe "Dog" do
   let(:teddy) { Dog.new(name: "Teddy", breed: "cockapoo") }
 
+  
   before :each do
     db = ActiveRecord::Base.connection
     db.execute("DROP TABLE IF EXISTS dogs")
@@ -70,5 +71,6 @@ describe "Dog" do
       expect(teddy_from_db).to be_an_instance_of(Dog)
     end
   end
+
 
 end
